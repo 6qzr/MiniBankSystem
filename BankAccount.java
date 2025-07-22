@@ -9,9 +9,22 @@ public class BankAccount {
         this.balance = balance;
     }
 
+    public String getAccountName() {
+        return accountName;
+    }
+
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
     public void showAccountInfo() {
         System.out.println("Account Name: " + this.accountName);
         System.out.println("Account Number: " + this.accountNumber);
         System.out.println("Balance: " + this.balance);
+        System.out.println();
     }
 }

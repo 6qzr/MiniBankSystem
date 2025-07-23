@@ -23,23 +23,23 @@ public class BankAccount {
 
     public void deposit(double amount) {
         if (amount <= 0) {
-            System.out.println("Deposit amount must be positive.");
+            System.out.println("Deposit amount must be positive.\n");
             return;
         }
         balance += amount;
-        System.out.println("Deposit successful. New balance: " + balance);
+        System.out.println("Deposit successful. New balance: " + balance + "\n");
     }
 
     public void withdraw(double amount) {
         if (amount <= 0) {
-            System.out.println("Withdraw amount must be positive.");
+            System.out.println("Withdraw amount must be positive.\n");
             return;
         }
         if (amount <= balance) {
             balance -= amount;
-            System.out.println("Withdrawal successful. New balance: " + balance);
+            System.out.println("Withdrawal successful. New balance: " + balance + "\n");
         } else {
-            System.out.println("Not enough balance.");
+            System.out.println("Not enough balance.\n");
         }
     }
 

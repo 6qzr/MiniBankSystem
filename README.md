@@ -49,6 +49,7 @@ Savings accounts have an additional `interestRate` and a method to apply interes
 ```bash
 javac Main.java BankAccount.java SavingsAccount.java
 java Main
+```
 
 ## License
 

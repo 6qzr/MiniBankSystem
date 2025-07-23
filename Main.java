@@ -12,8 +12,8 @@ public class Main {
             String option = scanner.next();
             switch (option) {
                 case "1": newAccount(scanner); break;
-                case "2": break;
-                case "3": break;
+                case "2": depositMoney(scanner); break;
+                case "3": withdrawMoney(scanner); break;
                 case "4": viewAccountDetails(scanner); break;
                 case "5": exit = true; System.out.println("\nGoodbye!");
                     scanner.close();
@@ -51,6 +51,48 @@ public class Main {
         System.out.println("\nAccount created successfully!\n");
     }
 
+    public static void depositMoney(Scanner scanner) {
+        if (accounts.isEmpty()) {
+            System.out.println("No accounts found.\n");
+            return;
+        }
+
+        scanner.nextLine(); // clear buffer
+        System.out.print("Enter account number: ");
+        String inputNumber = scanner.nextLine();
+
+        for (BankAccount account : accounts) {
+            if (account.getAccountNumber().equals(inputNumber)) {
+                System.out.print("Enter deposit amount: ");
+                double depositAmount = scanner.nextDouble();
+                account.deposit(depositAmount);
+                return;
+            }
+        }
+        System.out.println("Account not found.\n");
+    }
+
+    public static void withdrawMoney(Scanner scanner) {
+        if (accounts.isEmpty()) {
+            System.out.println("No accounts found.\n");
+            return;
+        }
+
+        scanner.nextLine(); // clear buffer
+        System.out.print("Enter account number: ");
+        String inputNumber = scanner.nextLine();
+
+        for (BankAccount account : accounts) {
+            if (account.getAccountNumber().equals(inputNumber)) {
+                System.out.print("Enter withdraw amount: ");
+                double withdrawAmount = scanner.nextDouble();
+                account.withdraw(withdrawAmount);
+                return;
+            }
+        }
+        System.out.println("Account not found.\n");
+    }
+
     public static void viewAccountDetails(Scanner scanner) {
         if (accounts.isEmpty()) {
             System.out.println("No accounts found.\n");
@@ -70,6 +112,5 @@ public class Main {
         }
         System.out.println("Account not found.\n");
     }
-
 
 }
